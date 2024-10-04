@@ -1,0 +1,209 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif; /* Changed to Roboto */
+    background: linear-gradient(to right, #74ebd5, #acb6e5);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-fluid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    padding: 40px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 600px;
+}
+
+section.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+section.inputs {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    width: 100%;
+}
+
+input[type="text"] {
+    padding: 15px;
+    font-size: 1.1rem;
+    border: 2px solid #74ebd5;
+    border-radius: 10px;
+    outline: none;
+    width: 100%;
+    max-width: 250px;
+    transition: all 0.3s ease-in-out;
+}
+
+input[type="text"]:focus {
+    border-color: #acb6e5;
+    box-shadow: 0 0 8px #74ebd5;
+}
+
+input[type="submit"],
+button {
+    padding: 12px 20px;
+    font-size: 1.1rem;
+    background-color: #74ebd5;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+input[type="submit"]:hover,
+button:hover {
+    background-color: #acb6e5;
+    transform: scale(1.05);
+}
+
+.wrapper {
+    text-align: center;
+    padding: 20px;
+}
+
+h2 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 1.3rem;
+    color: #555;
+}
+
+span {
+    font-weight: bold;
+    color: #ff7f50;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.forecast-item {
+    background-color: #fff;
+    border: 1px solid #74ebd5;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 5px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+section#forecast {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+}
+header {
+    width: 100%;
+    background: linear-gradient(to right, #74ebd5, #acb6e5); /* Gradient background */
+    border-radius: 10px;
+    padding: 30px; /* More space inside the header */
+    text-align: center;
+    margin-bottom: 20px; /* Space between header and main content */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Soft shadow */
+}
+
+header h1 {
+    font-size: 3rem; /* Increased font size for prominence */
+    color: white; /* White text color */
+    margin: 0;
+    display: flex; /* Align icon and text */
+    justify-content: center; /* Center alignment */
+    align-items: center; /* Vertical alignment */
+}
+
+header h1 i {
+    margin-right: 10px; /* Space between icon and text */
+    font-size: 1.5rem; /* Icon size */
+}
+
+header p {
+    font-size: 1.5rem; /* Adjusted font size for subtitle */
+    color: #fff; /* White subtitle */
+    margin-top: 5px; /* Small space above the subtitle */
+    font-style: italic; /* Italic style for emphasis */
+}
+
+.inputs {
+    position: relative; /* Positioning context for inputs */
+}
+
+input[type="text"], input[type="submit"], button {
+    transition: transform 0.3s ease; /* Smooth hover effect */
+}
+
+input[type="text"]:hover,
+input[type="submit"]:hover,
+button:hover {
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    h2 {
+        font-size: 2rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+
+    input[type="text"],
+    input[type="submit"],
+    button {
+        font-size: 1rem;
+        padding: 10px;
+    }
+}
+body {
+  cursor: none; /* Hide default cursor */
+}
+
+.cursor-star {
+  position: absolute;
+  width: 8px;  /* Base size */
+  height: 8px; /* Base size */
+  background-color: transparent; /* No fill color */
+  border: 4px solid; /* Increased border width for bolder appearance */
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+  pointer-events: none;
+  animation: star-animation 1.5s forwards;
+  opacity: 0.9;
+  mix-blend-mode: screen;
+}
+
+@keyframes star-animation {
+  0% {
+    transform: scale(0.5) translateY(0);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.5) translateY(-10px);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(0);
+    opacity: 0;
+  }
+}
